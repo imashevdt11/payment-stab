@@ -73,6 +73,10 @@ public class PaymentService {
         }
     }
 
+    public List<Card> getAllCards() {
+        return new ArrayList<>(cards);
+    }
+
     public String addCard(AddCardRequest request) {
         if (findCardByNumber(request.cardNumber()).isPresent()) {
             return "Ошибка: Карта с таким номером уже существует";
