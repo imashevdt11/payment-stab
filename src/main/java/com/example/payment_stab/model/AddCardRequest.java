@@ -2,6 +2,7 @@ package com.example.payment_stab.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 public record AddCardRequest (
         @NotBlank
@@ -15,7 +16,7 @@ public record AddCardRequest (
         String expiryDate,
         @NotBlank
         String cvv,
-        @NotBlank
+        @Positive
         @JsonProperty("balance")
         double balance
 ) {}
